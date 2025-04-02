@@ -2,15 +2,15 @@ syntax = "proto3";
 
 package todoPackage;
 
-services Todo{
+service Todo{
     rpc createTodo(TodoItem) returns (TodoItem);
-    rpc readTodo(void) returns (TodoItems)
+    rpc readTodos(void) returns (TodoItems);
 }
 
 message void {}
 
-message Todo{
-    int id = 1;
+message TodoItem{
+    int32 id = 1;
     string text = 2;
 }
 
